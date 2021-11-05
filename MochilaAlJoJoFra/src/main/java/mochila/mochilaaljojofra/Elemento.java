@@ -20,4 +20,28 @@ public class Elemento {
        this.Valor=Valor;
        this.Peso=Peso;
    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getValor() {
+        return Valor;
+    }
+
+    public void setValor(int Valor) {
+        this.Valor = Valor;
+    }
+
+    public int getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(int Peso) {
+        this.Peso = Peso;
+    }
 }
