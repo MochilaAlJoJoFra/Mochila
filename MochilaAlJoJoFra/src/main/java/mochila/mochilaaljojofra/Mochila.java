@@ -25,6 +25,9 @@ public class Mochila {
         this.elementos = elementos;
     }
     //Funciones extra
+    public void anadirElemento(Elemento elemento){
+        this.elementos.add(elemento);
+    }
     public int getPeso(){
         int peso = 0;
         for (Elemento elemento: this.elementos) {
