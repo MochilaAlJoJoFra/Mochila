@@ -33,5 +33,18 @@ public class Logica {
       }
        
     }
+    public Mochila Comparador(){
+        int valor = this.Arraymochila.get(0).getValorTotal();
+        Mochila mochilag = null;
+        for (int i = 0; i < this.Arraymochila.size(); i++) {
+            this.Arraymochila.get(i).getValorTotal();
+            if(this.Arraymochila.get(i).getValorTotal() > valor){
+                mochilag = this.Arraymochila.get(i);
+                valor = this.Arraymochila.get(i).getValorTotal();
+            }
+            
+        }
+        return mochilag;
+    }
 
 }
