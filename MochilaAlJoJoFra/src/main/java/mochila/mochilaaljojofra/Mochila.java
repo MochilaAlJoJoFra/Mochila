@@ -1,5 +1,8 @@
 package mochila.mochilaaljojofra;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Mochila {
     // Atributos
     private int pesoMax;
@@ -17,11 +20,11 @@ public class Mochila {
     public void setPesoMax(int pesoMax) {
         this.pesoMax = pesoMax;
     }
-    public <any> getElementos() {
+    public List<Elemento> getElementos() {
         return elementos;
     }
 
-    public void setElementos(<any> elementos) {
+    public void setElementos(List<Elemento> elementos) {
         this.elementos = elementos;
     }
     //Funciones extra
