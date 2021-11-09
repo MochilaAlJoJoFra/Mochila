@@ -1,13 +1,20 @@
 package mochila.mochilaaljojofra;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Mochila {
     // Atributos
     private int pesoMax;
-    private List<Elemento> elementos = new ArrayList<Elemento>();
+    private List<Elemento> elementos;
     // Constructor
     public Mochila(int pesoMax, List<Elemento> elementos) {
         this.pesoMax = pesoMax;
-        //this.elementos = elementos;
+        this.elementos = elementos;
+    }
+    public Mochila() {
+        this.pesoMax = 0;
+        this.elementos = new ArrayList<Elemento>();
     }
     // Getters y Setters
     public int getPesoMax() {
@@ -17,11 +24,11 @@ public class Mochila {
     public void setPesoMax(int pesoMax) {
         this.pesoMax = pesoMax;
     }
-    public <any> getElementos() {
+    public List<Elemento> getElementos() {
         return elementos;
     }
 
-    public void setElementos(<any> elementos) {
+    public void setElementos(List<Elemento> elementos) {
         this.elementos = elementos;
     }
     //Funciones extra
