@@ -6,6 +6,7 @@
 package mochila.mochilaaljojofra;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,15 +17,15 @@ public class Logica {
         
     }
     
-    private ArrayList<Mochila> Arraymochila= new ArrayList<Mochila>();
+    private List<Mochila> Arraymochila = new ArrayList<Mochila>();
     
             
-    public void Recursiva(ArrayList<Elemento> elemento,int contador, Mochila mochila){
+    public void Recursiva(List<Elemento> elemento,int contador, Mochila mochila){
         Mochila mochilab =new Mochila();
         for(int i=contador;i<elemento.size();i++){  
             mochilab = mochila;
             if(elemento.get(i).getPeso()>mochilab.getPesoDisponible()){
-                Arraymochila.add(mochilab);
+                this.Arraymochila.add(mochilab);
                 return;
             }else{
                 mochilab.anadirElemento(elemento.get(i));
@@ -34,7 +35,7 @@ public class Logica {
     }
     public Mochila Comparador(){
         int valor = this.Arraymochila.get(0).getValorTotal();
-        Mochila mochilag = null;
+        Mochila mochilag = new Mochila();
         for (int i = 0; i < this.Arraymochila.size(); i++) {
             this.Arraymochila.get(i).getValorTotal();
             if(this.Arraymochila.get(i).getValorTotal() > valor){
