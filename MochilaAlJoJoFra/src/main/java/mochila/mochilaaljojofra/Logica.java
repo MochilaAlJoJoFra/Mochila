@@ -7,7 +7,6 @@ package mochila.mochilaaljojofra;
 
 import java.util.ArrayList;
 import java.util.List;
-//https://www.discoduroderoer.es/el-problema-de-la-mochila-en-java-con-backtracking/
 /**
  *
  * @author alumno
