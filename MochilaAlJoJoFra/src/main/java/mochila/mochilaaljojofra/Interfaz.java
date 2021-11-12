@@ -82,6 +82,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jSpinner3.setName("pesomax"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -132,8 +133,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        jSpinnerpeso.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jSpinnerpeso.setName("peso"); // NOI18N
 
+        jSpinnervalor.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jSpinnervalor.setName("valor"); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -265,8 +268,8 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        logica.Recursiva(elementos, 0, mochila);
-        mochila = logica.Comparador();
+        logica.Recursiva(elementos, 0, mochila.clone());
+        mochila = logica.Comparador().clone();
         
         for(int i =0;i< mochila.getNumeroObjetos() ;i++){
             modelo.addElement("Nombre: "+mochila.getElementos().get(i).getNombre()+
