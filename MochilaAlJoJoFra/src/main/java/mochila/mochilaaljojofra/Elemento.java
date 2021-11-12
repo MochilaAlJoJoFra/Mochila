@@ -9,7 +9,7 @@ package mochila.mochilaaljojofra;
  *
  * @author alumno
  */
-public class Elemento {
+public class Elemento implements Cloneable {
     
    private String Nombre;
    private int Valor;
@@ -43,5 +43,10 @@ public class Elemento {
 
     public void setPeso(int Peso) {
         this.Peso = Peso;
+    }
+    @Override
+    protected Elemento clone(){
+        Elemento nueva= new Elemento(this.Nombre,this.Valor,this.Peso);
+        return nueva;
     }
 }

@@ -3,7 +3,7 @@ package mochila.mochilaaljojofra;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mochila {
+public class Mochila implements Cloneable {
     // Atributos
     private int pesoMax;
     private List<Elemento> elementos;
@@ -11,6 +11,10 @@ public class Mochila {
     public Mochila(int pesoMax, List<Elemento> elementos) {
         this.pesoMax = pesoMax;
         this.elementos = elementos;
+    }
+    public Mochila(int pesoMax) {
+        this.pesoMax = pesoMax;
+        this.elementos = new ArrayList<Elemento>();
     }
     public Mochila() {
         this.pesoMax = 0;
@@ -58,5 +62,13 @@ public class Mochila {
             nrElementos++;
         }
         return nrElementos;
+    }
+    public void limpiarMochila(){
+        this.elementos = new ArrayList<Elemento>();
+    }
+    @Override
+    protected Mochila clone(){
+        Mochila nueva= new Mochila(this.pesoMax,this.elementos);
+        return nueva;
     }
 }

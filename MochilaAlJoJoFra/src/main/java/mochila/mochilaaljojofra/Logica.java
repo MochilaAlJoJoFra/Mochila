@@ -7,7 +7,7 @@ package mochila.mochilaaljojofra;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//https://www.discoduroderoer.es/el-problema-de-la-mochila-en-java-con-backtracking/
 /**
  *
  * @author alumno
@@ -18,20 +18,20 @@ public class Logica {
     }
     
     private List<Mochila> Arraymochila = new ArrayList<Mochila>();
-    
             
-    public void Recursiva(List<Elemento> elemento,int contador, Mochila mochila){
-        Mochila mochilab =new Mochila();
-        for(int i=contador;i<elemento.size();i++){  
-            mochilab = mochila;
-            if(elemento.get(i).getPeso()>mochilab.getPesoDisponible()){
-                this.Arraymochila.add(mochilab);
-                return;
+            
+    public void Recursiva(List<Elemento> elementos,int contador, Mochila mochila){
+        Mochila mochilab = new Mochila(mochila.getPesoMax());
+        for(int i = contador; i < elementos.size() ; i++){
+            if(elementos.get(i).getPeso() > mochilab.getPesoDisponible()){
+                this.Arraymochila.add(mochilab.clone());
             }else{
-                mochilab.anadirElemento(elemento.get(i));
-                Recursiva(elemento,(i+1),mochilab);
+                mochilab.anadirElemento(elementos.get(i).clone());
+                Recursiva(elementos,(i+1),mochilab.clone());
+                mochila.limpiarMochila();
             }
         }
+        
     }
     public Mochila Comparador(){
         int valor = this.Arraymochila.get(0).getValorTotal();
@@ -42,7 +42,6 @@ public class Logica {
                 mochilag = this.Arraymochila.get(i);
                 valor = this.Arraymochila.get(i).getValorTotal();
             }
-            
         }
         return mochilag;
     }
